@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Produto;
 
 class ProdutoController extends Controller
 {
@@ -13,7 +14,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+        $this->create();
     }
 
     /**
@@ -23,7 +24,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.crud.create');
     }
 
     /**
@@ -34,7 +35,32 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nameFile = null;
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+            $name = uniqid(date('HisYmd'));
+            $extension = $request->image->extension();
+            $nameFile = "{$name}.{$extension}";
+            $upload = $request->image->storeAs('categorias', $nameFile);
+
+
+            if(!$upload){
+                return redirect()->back()->with('erro', 'Erro ao enviar a imagem!')->withInput();
+            }
+                $data = $request->validate([
+                    'nome' => 'required',
+                    'valor' => 'required',
+                    'estoque' => 'required',
+                    'descricao' => 'required',
+                    'categoria' => 'required',
+                ]);
+
+                $data['image'] = $nameFile;
+
+                $finaliza = Produto::create($data);
+                return redirect('admin/dashboard')->with('success', 'Produto novo cadastrado!');
+
+        }
+
     }
 
     /**
@@ -81,4 +107,5 @@ class ProdutoController extends Controller
     {
         //
     }
+
 }
