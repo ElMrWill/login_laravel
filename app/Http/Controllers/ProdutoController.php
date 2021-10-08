@@ -40,7 +40,7 @@ class ProdutoController extends Controller
             $name = uniqid(date('HisYmd'));
             $extension = $request->image->extension();
             $nameFile = "{$name}.{$extension}";
-            $upload = $request->image->storeAs('categorias', $nameFile);
+            $upload = $request->image->move('images', $nameFile);
 
 
             if(!$upload){
@@ -82,7 +82,8 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Produto::findOrFail($id);
+        return view ('admin.crud.edit', compact('item'));
     }
 
     /**
@@ -94,7 +95,45 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nameFile = null;
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+            $name = uniqid(date('HisYmd'));
+            $extension = $request->image->extension();
+            $nameFile = "{$name}.{$extension}";
+            $upload = $request->image->move('images', $nameFile);
+
+
+            if (!$upload) {
+                return redirect()->back()->with('erro', 'Erro ao enviar a imagem!')->withInput();
+            }
+
+            $data = $request->validate([
+                'nome' => 'required',
+                'valor' => 'required',
+                'estoque' => 'required',
+                'descricao' => 'required',
+                'categoria' => 'required',
+            ]);
+
+            $data['image'] = $nameFile;
+
+            $finaliza = Produto::whereId($id)->update($data);
+            return redirect('admin/dashboard')->with('success', 'Produto novo cadastrado!');
+
+        }
+            $data = $request->validate([
+                'nome' => 'required',
+                'valor' => 'required',
+                'estoque' => 'required',
+                'descricao' => 'required',
+                'categoria' => 'required',
+            ]);
+
+            $finaliza = Produto::whereId($id)->update($data);
+            return redirect('admin/dashboard')->with('success', 'Produto novo cadastrado!');
+
+
+
     }
 
     /**
@@ -105,7 +144,9 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produtosCase = Produto::findOrFail($id);
+        $produtosCase->delete();
+        return redirect('admin/dashboard')->with('sucess', 'Item removido com sucesso.');
     }
 
 }

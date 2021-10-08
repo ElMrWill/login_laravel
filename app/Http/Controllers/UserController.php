@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -11,14 +12,16 @@ use Hash;
 
 class UserController extends Controller
 {
-    public function index(){
-        return view ('admin.login');
+    public function index()
+    {
+        return view('admin.login');
     }
 
-    public function registro(){
+    public function registro()
+    {
 
         $numeroControle = rand(100000, 999999);
-        return view ('admin.registration', compact('numeroControle'));
+        return view('admin.registration', compact('numeroControle'));
     }
 
     public function registraUser(Request $request)
@@ -37,7 +40,8 @@ class UserController extends Controller
         return redirect()->intended('admin/login');
     }
 
-    public function create(array $data){
+    public function create(array $data)
+    {
 
         return User::create([
             'name' => $data['name'],
@@ -65,16 +69,18 @@ class UserController extends Controller
     }
 
 
-    public function dashboard(){
-        if(Auth::check()){
-            return view('/admin/dashboard');
-
+    public function dashboard()
+    {
+        if (Auth::check()) {
+            $produtoCases = Produto::all();
+            return view('admin/dashboard', compact('produtoCases'));
         }
 
         return redirect('/admin/login');
     }
 
-    public function logout(){
+    public function logout()
+    {
         Session::flush();
         Auth::logout();
 

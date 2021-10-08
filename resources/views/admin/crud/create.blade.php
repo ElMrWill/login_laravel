@@ -42,9 +42,9 @@
                             <label for="categoria" class="col-md-4 col-form-label text-md-right"></label>
                             <select name="categoria" class="form-select mt-3" required>
                                 <option selected disabled value="">Categoria</option>
-                                <option value="cat01">Categoria 01</option>
-                                <option value="cat02">Categoria 02</option>
-                                <option value="cat03">Categoria 03</option>
+                                <option value="cat01">Eletronicos</option>
+                                <option value="cat02">Veículos</option>
+                                <option value="cat03">Outros</option>
                             </select>
                             <div class="valid-feedback">Categoria selecionada!</div>
                             <div class="invalid-feedback">Informe a categoria do produto!</div>
