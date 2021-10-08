@@ -2,7 +2,7 @@
   --primary-color: #fff;
   --secondary-color: #00a3cc;
   --background: #f0f0f0;
-  --font-family: "Noto Sans", sans-serif;
+  --font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -247,5 +247,52 @@ header #MobileMenuBTN {
   margin-left: 6px;
   margin-top: -25px;
   font-size: 0.9rem;
-  color: grey;
+  color: #777777;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+}
+.login__table {
+  padding: 10px;
+  background-color: #fff;
+  width: 300px;
+  border-radius: 5px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 1px solid #d7dde2;
+}
+.login__table h1 {
+  text-align: center;
+  font-size: 37px;
+  color: #777777;
+  font-weight: 600;
+}
+.login__table .email_login {
+  width: 97%;
+  margin-right: 3px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+  font-size: 15px;
+  height: 35px;
+  padding: 4px;
+  color: #777777;
+  border: 2px solid #d7dde2;
+}
+.login__table .button_login {
+  background-color: var(--secondary-color);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.login__table .registrar {
+  font-size: 1rem;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */

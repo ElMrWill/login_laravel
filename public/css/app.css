@@ -1,0 +1,77 @@
+:root {
+    --primary-color: #fff;
+    --secondary-color: #73c2fb;
+    --background: #f0f0f0;
+    --font-family: "Noto Sans", sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    background-color: var(--background);
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+  
+  a {
+    color: var(--secondary-color);
+  }
+  
+  h3 {
+    color: #41464a;
+    font-size: 18px;
+  }
+  
+  h4 {
+    color: #41464a;
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    padding: 20px;
+    max-height: 100px;
+  }
+  .header__logo {
+    margin-left: 4%;
+  }
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .desktop-menu {
+    display: none;
+  }
+  .desktop-menu ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+  }
+  .desktop-menu__link {
+    padding: 6px 10px;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .desktop-menu__link__hover {
+    text-decoration: underline;
+  }
+  .desktop-menu__link.active {
+    font-weight: 800;
+    text-decoration: underline;
+  }
+  @media screen and (min-width: 800px) {
+    .desktop-menu {
+      display: block;
+    }
+  }

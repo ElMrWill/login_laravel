@@ -4,9 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Frontend\ClienteController;
 
 Route::get('/', [FrontendController::class, 'index'])->name('inicio-loja');
 Route::get('add-carrinho/{id}', [FrontendController::class, 'verifica'])->name('add-carrinho');
+Route::post('login-user', [ClienteController::class, 'login'])->name('login-user');
+Route::get('user/registrar-novo', [ClienteController::class, 'registrar'])->name('registrar.cliente');
+Route::post('registra-user', [ClienteController::class, 'criar'])->name('cria.cliente');
 
 Route::get('admin/', [UserController::class, 'index']);
 Route::get('admin', [UserController::class, 'index']);

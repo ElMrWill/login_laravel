@@ -21,21 +21,6 @@
             <a href="{{ asset('/') }}">Carrinho</a>
             <a href="{{ asset('/') }}">Login</a>
         </div>
-        <button class="button mobile-nav-close"></button>
-        <button class="button" id="MobileMenuBTN" aria-label="Toggle Menu" aria-expanded="false"
-        aria-controls="mobileMenu">
-               <img src="src/images/menu.svg" alt="Menu Móvel" width="16">
-           </button>
     </div>
 </header>
 
-<nav class="menu-mobile" id="mobileMenu">
-    <button class="button mobile-nav-close"></button>
-    <ul>
-        <li><a href="#" class="desktop-menu__link active">Início</a></li>
-        <li><a href="#" class="desktop-menu__link">Link 1</a></li>
-        <li><a href="#" class="desktop-menu__link">Link 2</a></li>
-        <li><a href="#" class="desktop-menu__link">Link 3</a></li>
-        <li><a href="#" class="desktop-menu__link">Link 4</a></li>
-    </ul>
-</nav>
