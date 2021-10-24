@@ -6,6 +6,11 @@
 
 
 @section('content')
+    @if(session('success'))
+        <div class="message">
+            <h5>{{ session('success') }}</h5>
+        </div>
+    @endif
     <div class="hero">
         <div class="py-5">
             <div class="hero__container">

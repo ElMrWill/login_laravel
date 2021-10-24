@@ -49,6 +49,18 @@
                                             @endif
                                         </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label for="nivel" class="col-md-4 col-form-label text-md-right"></label>
+                                    <select name="nivel" class="form-select mt-3" required>
+                                        <option selected disabled value="">Função</option>
+                                        <option value="2">Vendedor</option>
+                                        <option value="3">Gerente</option>
+                                        <option value="4">Criador de Conteudo</option>
+                                    </select>
+                                    <div class="valid-feedback">Categoria selecionada!</div>
+                                    <div class="invalid-feedback">Informe a categoria do produto!</div>
+                            </div>
+                                
 
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">

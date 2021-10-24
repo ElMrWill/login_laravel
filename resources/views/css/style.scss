@@ -130,7 +130,12 @@ header{
 }
 
 .header-login{
-    display: none;
+
+
+    .divisor{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
     a{
         font-size: 1.0rem;
@@ -143,7 +148,9 @@ header{
     }
 
     @media screen and(min-width: 800px){
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -324,4 +331,122 @@ header{
             text-decoration:none;
         }
     }
+}
+.message {
+    display: block;
+    margin: 3%;
+    padding-left: 1%;
+    background: rgb(144,238,144);
+    color: #fff;
+    border-radius: 6px;
+
+    h5{
+        color: #fff;
+    }
+}
+
+.finaliza{
+    margin-top: 2%;
+    margin-right: 2%;
+    display: block;
+    justify-content: flex-end;
+    align-items: right;
+}
+
+.btnCaixa{
+    display: block;
+    background: rgb(9, 202, 9);
+    margin-bottom: 1%;
+    width: 25%;
+    align-items: center;
+    border-radius: 5px;
+    text-align: center;
+
+
+    a{
+        color: #fff;
+        font-size: 20px;
+        text-decoration: none;
+        font-weight: 700;
+
+    a:hover{
+        text-decoration: none;
+        color: #fff;
+        }
+    }
+}
+
+.content{
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        
+        td, th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        }
+    
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+    
+        tr:hover {
+            background-color: #ddd;
+        }
+    
+        th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+} 
+
+.data{
+    width: 80%;
+    margin: 3%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+
+    h1{
+        text-align: center;
+        font-size: 45px;
+        color: #2e2d2d;
+    }
+
+    p{
+        font-weight: 700;
+        margin-bottom: 0;
+        margin-left: 2%;
+    }
+
+
+    &__fields{
+        padding: 1% 3%;
+        font-size: 20px;
+
+        input{
+            display: block;
+            text-transform: uppercase;
+            border-radius: 3px;
+            width: 100%;
+            height: 25px;
+            border: 1px solid #ddd;
+            padding-left: 3%;
+            font-size: 17px;
+            color:rgb(119, 119, 119);
+            font-weight: 700;
+        }
+    }
+    
 }

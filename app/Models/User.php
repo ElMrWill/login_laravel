@@ -22,6 +22,17 @@ class User extends Authenticatable
         'email',
         'password',
         'cod',
+        'nivel',
+        'tel',
+        'rua',
+        'numero',
+        'bairro',
+        'cidade',
+        'cep',
+        'cpf',
+        'ultimaCompraId',
+        'ultimoGasto',
+        'mediaGasto'
     ];
 
     /**

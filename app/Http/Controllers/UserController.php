@@ -31,6 +31,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
             'cod' => 'required|min:6',
+            'nivel' => 'required'
         ]);
 
 
@@ -48,6 +49,7 @@ class UserController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'cod' => $data['cod'],
+            'nivel' => $data['nivel'],
         ]);
     }
 

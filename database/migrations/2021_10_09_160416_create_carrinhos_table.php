@@ -13,12 +13,13 @@ class CreateCarrinhosTable extends Migration
      */
     public function up()
     {
-        Schema::create('carrinho', function (Blueprint $table) {
+        Schema::create('carrinhos', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_item');
+            $table->integer('produto_id')->unsigned();
             $table->integer('quantidade');
             $table->string('detalhes');
-            $table->string('id_user');
+            $table->integer('pedido_id')->unsigned();
+            $table->string('user_id');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateCarrinhosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carrinho');
+        Schema::dropIfExists('carrinhos');
     }
 }

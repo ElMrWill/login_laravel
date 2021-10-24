@@ -10,15 +10,15 @@
     <div class="login__table">
         <div class="login__content">
             <h1>Faça seu login!</h1>
-            <form action="{{ route('login-user')}}" method="POST">
+            <form action="#" method="post">
             @csrf
                 <div class="login__field">
                     <label for="email "class="label_login"></label>
                     <input type="email" id="email" placeholder="E-mail" name="email" class="email_login" autofocus required>
                 </div>
                 <div class="login__field">
-                    <label for="password "class="label_login"></label>
-                    <input type="password" id="password" placeholder="Senha" name="password" class="email_login" autofocus required>
+                    <label for="senha "class="label_login"></label>
+                    <input type="password" id="senha" placeholder="Senha" name="senha" class="email_login" autofocus required>
                 </div>
                 <div class="login__button">
                     <button type="submit" class="button_login">

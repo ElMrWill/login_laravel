@@ -18,8 +18,15 @@
             </nav>
         </div>
         <div class="header-login">
-            <a href="{{ asset('/') }}">Carrinho</a>
-            <a href="{{ asset('/') }}">Login</a>
+            @guest
+                <a href="{{ asset('meu-carrinho')  }}">Carrinho </a>
+                    <div class="divisor"> | </div>
+                <a href="{{ asset('/') }}"> Login</a>
+            @else
+                <a href="{{ asset('meu-carrinho') }}">Carrinho </a>
+                <div class="divisor"> | </div>
+                <a href="{{ asset('/') }}"> {{Auth::user()->name}} </a>
+            @endguest
         </div>
     </div>
 </header>

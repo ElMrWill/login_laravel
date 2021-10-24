@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produto extends Model
 {
+
+    protected $table = 'produtos';
+
     protected $fillable = ['nome', 'valor', 'estoque', 'descricao', 'categoria', 'image'];
+
+    public function carrinho()
+    {
+        return $this->hasOne(Carrinho::class);
+    }
 }
